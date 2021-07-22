@@ -1,0 +1,176 @@
+  <!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Pinigenai</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, maximum-scale=1, minimum-scale=1, minimal-ui, height=device-height">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="pinigenai/css/normalize.css">
+  <link rel="stylesheet" href="pinigenai/style.css">
+  <link rel="stylesheet" href="pinigenai/gamestyle.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="pinigenai/js/cookies.js"></script>
+  
+  <script src="pinigenai/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="pinigenai/js/plugins.js"></script>
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  
+</head>
+
+<body>
+<script type="text/javascript">
+    var siteLanguage="lt";
+	var siteURL = "pinigenai.lt";
+	var siteCountry = "LT";
+	var languageVersion = siteCountry.toLowerCase();
+	//<![CDATA[
+	var s_account="dbgmoneyville";
+	//]]>
+</script>
+
+
+
+<div id="introvideo" style="display:none;width: 1024px;height: 700px;background-color: #08548c;z-index: 1000;margin-left:auto;margin-right:auto;">
+		<video style="width: 100%;height: 100%; object-fit:contain; object-position: 50% 0;">
+			<!--<source src="images/dk/Pengeby_Intro_Capture_01.mp4" />-->
+        </video>
+		<div style="position: absolute; opacity:1; top:-200px; left:330px; width: 550px; height:70px; padding:50px; padding-top:80px; color:white; border-radius:10px; background-color: #0c1f3f; font-size: 14px;" id="videoSubtitles">Subtitles</div>
+        <div style="position: absolute; opacity:0; cursor: pointer;" id="showVideoSubtitles" onclick="showVideoSubtitles();"><img src="images/dk/skipintro.png" /></div>
+        <div style="position: absolute; opacity:0; cursor: pointer;" id="skipintrobtn" onclick="skipIntro();"><img src="images/dk/skipintro.png" /></div>
+        <div style="position: absolute; opacity:0;cursor: pointer;" id="mutebtn" onclick="muteIntro()"><img src="images/dk/mutebtn.png" /></div>
+        
+	</div>
+	<div id="container">
+		<div id="top-nav">
+	        <a href="/pagalba">Pagalba</a>
+<a href="/mokytojams">Mokytojams</a>
+<a href="/tevams">Tėvams</a>
+			<!--
+			<a href="/help">Hj&aelig;lp til spillet</a>
+			<a href="/laerer-introduktion-til-pengeby">Er du l&aelig;rer?</a>
+			<a href="/intro">Er du for&aelig;ldre?</a>
+				-->
+		</div>
+		<div id="frontpage">
+			<div id="maintenance">
+				                    <div id="maintenance-close" onclick="closeMaintenance();">Uždaryti X</div>
+                    <b>Laikinas tekstas</b><br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
+			</div>
+            <div id="forside-content">
+                <img class="forside-bg" src="pinigenai/img/forside.jpg" />
+			    <div class="play-btn" onclick="gotoIntro();"><img src="pinigenai/img/lt/gotogame.png"></div>
+			    <img class="sign" src="pinigenai/img/lt/sign.png"  data-at2x="pinigenai/img/dk/sign@2x.png" />
+                <img class="bubble" src="pinigenai/img/lt/bubble.png" data-at2x="pinigenai/img/dk/bubble@2x.png" />
+            </div>
+        </div>
+        
+        
+    </div>
+    <div id="nameinput" class="textinput"><input type="text" /></div>
+	<div id="monoinput" class="textinput"><input type="text" /></div>
+	
+	<div id="mononameinput0" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput1" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput2" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput3" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput4" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput5" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput6" class="mononameinput textinput"><input type="text" /></div>
+    <div id="mononameinput7" class="mononameinput textinput"><input type="text" /></div>
+
+    <div id="rotate-screen" style="display:none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 2000; text-align: center;">
+        <img style="margin-top: 100px;" id="rotate-icon" src="pinigenai/img/rotate-icon.png" />
+    </div>
+
+    <script>
+        $( document ).ready(function() {
+            $(window).resize(frontpageResize);
+            $(".play-btn").show();
+
+            frontpageResize();
+        });
+        
+        function closeMaintenance(){
+            $("#maintenance").hide();
+        }
+
+        function frontpageResize(){
+            if(window.innerHeight < 600 && window.innerWidth <600){
+                var boxScale = Math.min(window.innerHeight/548, window.innerWidth/712);
+                TweenMax.set("#forside-content", {scale:boxScale, transformOrigin:"50% 100%"});
+                $(".bubble").hide();
+
+            }else if(window.innerHeight < 600){
+                boxScale=window.innerHeight/548;
+                TweenMax.set("#forside-content", {scale:boxScale, transformOrigin:"50% 100%"});
+                $(".bubble").hide();
+
+
+            }else if(window.innerWidth < 600){
+                boxScale=window.innerWidth/712;
+                TweenMax.set("#forside-content", {scale:boxScale, transformOrigin:"50% 100%"});
+                $(".bubble").hide();
+
+            }else{
+                boxScale=1;
+                TweenMax.set("#forside-content", {scale:boxScale, transformOrigin:"50% 100%"});
+                $(".bubble").show();
+            }
+
+            if(window.innerHeight < $(".forside-bg").height()*boxScale){
+                $("#forside-content").css("marginTop", (0-(170*boxScale))+"px");
+            }else{
+                $("#forside-content").css("marginTop", "0px");
+            }
+
+        }
+
+        function gotoIntro(){
+            $( window ).off("resize", frontpageResize);
+
+            startIntro();
+        }
+
+    </script>
+</section>
+
+ </script>
+
+    <script src="pinigenai/js/modernizr-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/PixiPlugin.min.js"></script>
+    <script src="pinigenai/js/plugins.js"></script>
+    <script src="pinigenai/js/pixi.js"></script>
+    <script src="pinigenai/js/pixi-sound.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-filters@2.6.1/dist/pixi-filters.js"></script>
+	<script src="pinigenai/js/intro.js"></script>
+    <script src="pinigenai/js/game.js"></script>
+    
+</body>
+
+</html>
