@@ -647,6 +647,7 @@ function loadUniverseResources(data){
         .add("images/karens/items/dragon.json")
         .add("images/karens/items/heartlights.json")
         .add("images/karens/items/items.json")
+        .add("images/karens/items/customItems.json")
         .add("images/karens/items/lavalamp.json")
         .add("images/karens/items/rocket.json")
         .add("images/karens/items/wand.json")
@@ -2844,6 +2845,7 @@ function loadRoomResources(data){
     .add("images/karens/items/dragon.json")
     .add("images/karens/items/heartlights.json")
     .add("images/karens/items/items.json")
+    .add("images/karens/items/customItems.json")
     .add("images/karens/items/lavalamp.json")
     .add("images/karens/items/rocket.json")
     .add("images/karens/items/wand.json")
@@ -2894,6 +2896,7 @@ roomItems.push(["dino", 29, "heartlights0",-1, 100, "",-60,-20]);
 roomItems.push(["ridder", 29, "heartlights0",-1, 100, "",-60,-20]);
 roomItems.push(["rome", 29, "heartlights0",-1, 100, "",-60,-20]);
 roomItems.push(["egypt", 29, "heartlights0",-1, 100, "",-60,-20]);
+roomItems.push(["melyninismiau", 100, "citem100",0, 27, "", 0, -50]);
 
 function initRoom(loader, resources){
     gameConfig={};
@@ -3821,6 +3824,10 @@ shopItems.push(["superman", 20, "item100",23, 27, "",0,-80]);
 shopItems.push(["modeldoll", 8, "item100",24, 27, "",-5,-75]);
 shopItems.push(["dragon", 18, "dragon0",-1, 123, "", -35, 0]);
 shopItems.push(["heartlights", 29, "heartlights0",-1, 100, "",-60,-20]);
+//shopItems.push(["teddy", 7, "item100",16, 27, "", 0, -70]);
+shopItems.push(["melyninismiau", 100, "citem100",0, 27, "", 0, -50]);
+
+//name[0], price[1], textureName[2], frame[3], frames[4], sound[5], xPos[6], yPos[7]
 
 //shoes
 var shopBoyShoes=new Array(["boyShoes0", 9, "BoyDressItemShoes00", 0, 11]);
