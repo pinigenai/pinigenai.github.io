@@ -1,0 +1,19 @@
+{"frames": {
+
+        "citem10000": {
+                "frame": {"x":0,"y":0,"w":46,"h":141},
+                "rotated": false,
+                "trimmed": true,
+                "spriteSourceSize": {"x":0,"y":0,"w":46,"h":141},
+                "sourceSize": {"w":46,"h":141}
+            }
+    },
+    "meta": {
+        "app": "Adobe Animate",
+        "version": "16.0.0.112",
+        "image": "customItems.png",
+        "format": "RGBA8888",
+        "size": {"w":512,"h":1024},
+        "scale": "1"
+    }
+}
