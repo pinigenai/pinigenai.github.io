@@ -1,10 +1,8 @@
-/*function getCookie(name){
-    var re = new RegExp(name + "=([^;]+)");
-    var value = re.exec(document.cookie);
-    console.log(value)
-    return (value != null) ? unescape(value[1]) : null;
-}
-
+function checkCookieHasASpecificValue() {
+    if (document.cookie.split(';').some((item) => item.includes('cookiesOn=yes'))) {
+        return true;
+    }
+  }
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -14,18 +12,16 @@ function setCookie(cname, cvalue, exdays) {
 
 
 
-if(getCookie("cookiesOn") == "yes") {
+if(checkCookieHasASpecificValue()) {
     jQuery("#cookieDisclaimer").hide();
 }
 
 function acceptCookies(){
-	setCookie("cookiesOn","yes",365);
-    getCookie("cookiesOn")
+    document.cookie = "cookiesOn=yes; SameSite=None; Secure";
     console.log("asdasda")
 	jQuery("#cookieDisclaimer").hide();
 }
 function rejectCookies(){
-	setCookie("cookiesOn","no",365);
+    document.cookie = "cookiesOn=no; SameSite=None; Secure";
 	jQuery("#cookieDisclaimer").hide();
 }
-*/
