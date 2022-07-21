@@ -1,4 +1,4 @@
-function getCookie(name){
+/*function getCookie(name){
     var re = new RegExp(name + "=([^;]+)");
     var value = re.exec(document.cookie);
     console.log(value)
@@ -11,6 +11,8 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+
 
 if(getCookie("cookiesOn") == "yes") {
     jQuery("#cookieDisclaimer").hide();
@@ -26,3 +28,4 @@ function rejectCookies(){
 	setCookie("cookiesOn","no",365);
 	jQuery("#cookieDisclaimer").hide();
 }
+*/
