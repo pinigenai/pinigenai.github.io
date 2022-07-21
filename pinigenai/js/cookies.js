@@ -1,5 +1,5 @@
-function checkCookieHasASpecificValue() {
-    if (document.cookie.split(';').some((item) => item.includes('cookiesOn=yes'))) {
+function checkCookie() {
+    if (document.cookie.split(';').some((item) => item.includes('cookiesOn'))) {
         return true;
     }
   }
@@ -12,16 +12,16 @@ function setCookie(cname, cvalue, exdays) {
 
 
 
-if(checkCookieHasASpecificValue()) {
+if(checkCookie()) {
     jQuery("#cookieDisclaimer").hide();
 }
 
 function acceptCookies(){
-    document.cookie = "cookiesOn=yes; SameSite=None; Secure";
+    document.cookie = "cookiesOn=yes; expires=Fri, 31 Dec 9999 23:59:59 GMT; SameSite=None; Secure";
     console.log("asdasda")
 	jQuery("#cookieDisclaimer").hide();
 }
 function rejectCookies(){
-    document.cookie = "cookiesOn=no; SameSite=None; Secure";
+    document.cookie = "cookiesOn=no; expires=Fri, 31 Dec 9999 23:59:59 GMT; SameSite=None; Secure";
 	jQuery("#cookieDisclaimer").hide();
 }
