@@ -1,6 +1,7 @@
 function getCookie(name){
     var re = new RegExp(name + "=([^;]+)");
     var value = re.exec(document.cookie);
+    console.log(value)
     return (value != null) ? unescape(value[1]) : null;
 }
 
@@ -11,7 +12,7 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-if(getCookie(cookiesOn) == "yes") {
+if(getCookie("cookiesOn") == "yes") {
     jQuery("#cookieDisclaimer").hide();
 }
 
