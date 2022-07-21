@@ -46,7 +46,7 @@ var language = "dk";
 var localTest = false;
 
 if(window.location.hostname == "127.0.0.1" || (window.location.hostname == "pengeby.tekstur.dk" || window.location.hostname == "tekstur.dk")){
-    localTest=true;
+    localTest=false;
     languageVersion = "dk"
     language = languageVersion
 }else{
@@ -57,7 +57,7 @@ if(window.location.hostname == "127.0.0.1" || (window.location.hostname == "peng
 
 var doTrack=true;
 
-var allowCookies=false;
+var allowCookies=true;
 var user;
 
 var mobileScale=1;
@@ -95,7 +95,6 @@ function showGame(){
     isIPad = (navigator.userAgent.match(/(iPad)/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) );
 
 
-    allowCookies = checkCookie();
 
 
     sendStatPoint("start-pengeby");
@@ -443,7 +442,7 @@ function initPreloader(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/universe.json',
+            url: './gameadmin/universe.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadUniverseResources);
@@ -1035,15 +1034,15 @@ function checkForUserSelect(){
     if(allowCookies){
         getUserCookie();
         if(user){
-            //console.log("user exists - show user select screen");
+            console.log("user exists - show user select screen");
             skipUserSelect = false;
         }else{
-            //console.log("no existing user - skip user select");
+            console.log("no existing user - skip user select");
             
 
         }
     }else{
-        //console.log("no cookies allowed - skip user select");
+        console.log("no cookies allowed - skip user select");
     }
 
     if(skipUserSelect){
@@ -1064,7 +1063,7 @@ function checkForUserSelect(){
         user.visitedPost = false;
         user.visitedTime = false;
 
-        //updateUserCookie(); //defer until user finished
+        updateUserCookie(); //defer until user finished
         setupInterface();
 
         selectGender();
@@ -1110,7 +1109,7 @@ function userSelect(){
     nextBtn.on('pointerup', newUser);
     gameContainer.addChild(nextBtn);
 
-    gameConfig.label2 = new PIXI.Text("Ny figur", labelStyle);
+    gameConfig.label2 = new PIXI.Text("Naujas veikėjas", labelStyle);
     gameConfig.label2.x=660;
     gameConfig.label2.y=570;
     gameConfig.label2.interactive=false;
@@ -2799,7 +2798,7 @@ function showRoom(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/room.json',
+            url: './gameadmin/room.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadRoomResources);
@@ -3759,7 +3758,7 @@ function showKarens(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/karens.json',
+            url: './gameadmin/karens.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadKarensResources);
@@ -4576,7 +4575,7 @@ function showTimeMachine(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/time.json',
+            url: './gameadmin/time.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadTMReseources);
@@ -5110,7 +5109,7 @@ function showDinoGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/dino.json',
+            url: './gameadmin/dino.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadDinoReseources);
@@ -6296,7 +6295,7 @@ function showEgyptGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/egypt.json',
+            url: './gameadmin/egypt.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadEgyptReseources);
@@ -6931,7 +6930,7 @@ function showRomeGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/rome.json',
+            url: './gameadmin/rome.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadRomeReseources);
@@ -7328,7 +7327,7 @@ function showKnightGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/knight.json',
+            url: './gameadmin/knight.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadRidderReseources);
@@ -7846,7 +7845,7 @@ function showAppleGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/apple.json',
+            url: './gameadmin/apple.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadAppleResources);
@@ -8423,7 +8422,7 @@ function showPostOfficeGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/postoffice.json',
+            url: './gameadmin/postoffice.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadPostResources);
@@ -9175,7 +9174,7 @@ function showFarmGame(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/farm.json',
+            url: './gameadmin/farm.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadFarmResources);
@@ -10433,7 +10432,7 @@ function showWizard(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/wizard.json',
+            url: './gameadmin/wizard.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadWizardResources);
@@ -11106,7 +11105,7 @@ function showGate(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/citygate.json',
+            url: './gameadmin/citygate.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadGateResources);
@@ -11725,7 +11724,7 @@ function showMonopoly(){
     }else{
         $.ajax({
             type: 'GET',
-            url: '/gameadmin/monopoly.json',
+            url: './gameadmin/monopoly.json',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
         }).done(loadMonopolyResources);
@@ -15118,7 +15117,7 @@ function playMayor(){
 //sitecatalyst
 function sendStatPoint(statString){
     if(allowCookies && doTrack){
-        flashEventFunction(statString+"_"+language,'','','');
+     //   flashEventFunction(statString+"_"+language,'','','');
     }else{
         //console.log("no track "+statString);
     }
