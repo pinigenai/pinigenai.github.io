@@ -11,9 +11,9 @@ Version: 1.0
 
 
 #cookieDisclaimer {
-    padding: 8px 0;
+    padding: 12px;
 	background-color: #003755;
-	width: 100%;
+	width: 52%;
 	padding: 10px 0;
 	position: fixed;
     z-index: 3000;

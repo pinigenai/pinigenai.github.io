@@ -57,7 +57,7 @@ if(window.location.hostname == "127.0.0.1" || (window.location.hostname == "peng
 
 var doTrack=true;
 
-var allowCookies=true;
+var allowCookies=false;
 var user;
 
 var mobileScale=1;
@@ -95,7 +95,7 @@ function showGame(){
     isIPad = (navigator.userAgent.match(/(iPad)/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) );
 
 
-
+allowCookies=checkCookie();
 
     sendStatPoint("start-pengeby");
 
