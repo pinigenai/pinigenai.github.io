@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="pinigenai/gamestyle.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="pinigenai/js/cookies.js"></script>
+
+ 
   
   <script src="pinigenai/js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="pinigenai/js/plugins.js"></script>
@@ -74,11 +75,15 @@ img.emoji {
 				-->
 		</div>
 		<div id="frontpage">
-			<div id="maintenance">
-				                    <div id="maintenance-close" onclick="closeMaintenance();">Uždaryti X</div>
-                    <b>Laikinas tekstas</b><br/>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
-			</div>
+			<div id="cookieDisclaimer">
+
+
+                    
+                    <p class="cookieDisclaimerText">Jeigu neįjungsite negalėsite išsaugoti savo žaidimo.</p><br>
+                     <button onclick="acceptCookies()">Allow cookies</button> 
+                     <button onclick="rejectCookies()">disallow cookies</button> 
+                </div>
+                 <script src="pinigenai/js/cookies.js"></script>
             <div id="forside-content">
                 <img class="forside-bg" src="pinigenai/img/forside.jpg" />
 			    <div class="play-btn" onclick="gotoIntro();"><img src="pinigenai/img/lt/gotogame.png"></div>
@@ -114,7 +119,7 @@ img.emoji {
         });
         
         function closeMaintenance(){
-            $("#maintenance").hide();
+            $("#cookieDisclaimer").hide();
         }
 
         function frontpageResize(){
